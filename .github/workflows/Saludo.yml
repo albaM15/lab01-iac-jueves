@@ -1,4 +1,6 @@
-name: Saludo
+name: saludo
+env: 
+    name: alba
 
 on:
   push:
@@ -10,9 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saludo desde main 
-      - run: echo "hola desde main, soy walter leturia"
+      - run: echo "hola desde main, soy ${{ env.name }}"
       - if: github.ref == 'refs/heads/main'
 
       - name: Saludo desde develop 
       - if: github.ref == 'refs/heads/develop'
-      - run: echo "hola desde develop, soy walter leturia"
+      - run: echo "hola desde develop, ${{ env.name }}"
+
+
+
