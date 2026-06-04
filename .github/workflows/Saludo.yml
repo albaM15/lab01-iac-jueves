@@ -1,12 +1,11 @@
 name: saludo
-env: 
-    name: alba
-
 on:
   push:
     branches:
       - main
       - develop
+env: 
+    name: alba
 jobs:
   saludo:
     runs-on: ubuntu-latest
